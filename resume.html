@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>resume</title>
+    <style>
+        img {
+            display: inline;
+            border-radius: 14rem;
+            border: 2px solid red;
+        }
+
+        .res{
+            padding: 1rem;
+            border: .2rem dotted lightblue;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .header>h1 {
+            background-image: linear-gradient(to right, green, pink);
+            padding: 2rem;
+            color: white;
+            border-radius: 1rem 4rem;
+        }
+
+        .profile>h4,
+        .edu>h4,
+        .contacts>h4,
+        .skill>h4,
+        .exp>h4 {
+            padding-bottom: 6px;
+            border-bottom: 2px solid black;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid1,
+        .grid2 {
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume"></div>
+<form action="" class="input-fields">
+    <input type="text">
+</form>
+    <button onclick="toggle()"><i>
+            preview or edit
+        </i>
+    </button>
+    <script>
+        let resume = document.querySelector(".resume")
+        let prevBtn = document.querySelector("button")
+        let inputFields = document.querySelector(".input-fields")
+        console.log(resume)
+        let isinputshown = true
+
+        function toggle(){
+        if (isinputshown){
+        isinputshown = false
+       inputFields.style.display = "none"
+
+       resume.innerHTML = `
+       <div class="res">
+        <div class="header">
+            <img src="kgf.jpeg" alt="person pic" width="200" height="240" />
+            <h1>ramanadham venkatesh</h1>
+        </div>
+        <div class="grid">
+            <div class="grid1">
+                <div class="profile">
+                    <h4>PROFILE</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+                        nam.
+                    </p>
+                </div>
+                <div class="contacts">
+                    <h4>CONTACTS</h4>
+                    <h5>946767890</h5>
+                    <p>email</p>
+                    <h5>address</h5>
+                </div>
+                <div class="skill">
+                    <h4>SKILLS</h4>
+                    <li>web dev</li>
+                    <li>phyhon</li>
+                    <li>sql</li>
+                    <li>frontend</li>
+                </div>
+            </div>
+            <div class="grid2">
+                <div class="exp">
+                    <h4>WORK EXPERIENCE</h4>
+                    <h6>2011-2018</h6>
+                    <h3>graphic designer</h3>
+                    <p>company name</p>
+                    <p class="desc">Lorem, ipsum dolor.</p>
+                </div>
+                <div class="edu">
+                    <h4>EDUCATIONAL QUALIFICATION</h4>
+                    <h3>Bachelors:</h3>
+                    <h5 class="grey">2024</h5>
+                    <b>information technology</b>
+                    <h5 class="grey">bapatla enginnering college</h5>
+                    <h3>Intermediate:</h3>
+                    <b>m.p.c</b>
+                    <h5 class="grey">sri gowthami junior college</h5>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        
+     `
+        }
+        else{
+        isinputshown = true
+        inputFields.style.display = "block"
+        resume.innerHTML = ""
+
+        }
+    }   
+    </script>
+</body>
+
+</html>
