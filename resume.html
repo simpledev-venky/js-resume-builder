@@ -8,8 +8,8 @@
     <style>
       img {
         display: inline;
-        border-radius: 14rem;
-        border: 2px solid red;
+        border-radius: 4rem;
+        border: 2px solid rgb(47, 0, 255);
       }
 
       .res {
@@ -78,6 +78,17 @@
       .grey {
         color: grey;
       }
+      .prev{
+      padding: 8px 12px;
+      background-color: rgb(48, 229, 208);
+      float: center;
+      color: rgb(139, 60, 0);
+      border-radius: 1rem;
+      margin:12px 40%;
+      font-size: large;
+      font-weight: bold;
+
+      }
     </style>
   </head>
 
@@ -133,6 +144,9 @@
           <option value="">Bachelor of Engineering</option>
           <option value="">Bachelor of Science</option></select
         ><br />
+        BACHELORS COLLEGE NAME:
+        <input type="text" name="btech">
+        CGPA Obtained
         <input type="number" name="btechper" />
         Intermediate college Name
         <input type="text" name="inter" />
@@ -155,7 +169,7 @@
         <input type="text" name="desc">
       </div>
     </form>
-    <button onclick="toggle()"><i> preview or edit </i></button>
+    <button onclick="toggle()" class="prev"><i> preview or edit </i></button>
     <script>
       let resume = document.querySelector(".resume");
       let prevBtn = document.querySelector("button");
@@ -168,12 +182,17 @@
         if (isinputshown) {
           isinputshown = false;
           inputFields.style.display = "none";
+          let file = inputFields["pic"].files[0]
+         let reader = new FileReader()
+         reader.readAsDataURL(file)
+         console.log(reader.result)
+
 
           resume.innerHTML = `
        <div class="res">
         <div class="header">
-            <img src="kgf.jpeg" alt="person pic" width="200" height="240" />
-            <h1>${inputFields["fname"].value}${inputFields["lname"].value}</h1>
+            <img src="" id="pic" width="200" height="230" />
+            <h1>${inputFields["fname"].value} ${inputFields["lname"].value}</h1>
         </div>
         <div class="grid">
             <div class="grid1">
@@ -191,8 +210,8 @@
                 </div>
                 <div class="skill">
                     <h4>SKILLS</h4>
-                    <li>${inputFields["skill1"].value}</li>
-                    <li>${inputFields["skill2"].value}</li>
+                    <li>${inputFields["skill1"].value}-${inputFields["skill-level1"].value}</li>
+                    <li>${inputFields["skill2"].value}-${inputFields["skill-level2"].value}</li>
                     
                 </div>
             </div>
@@ -206,12 +225,12 @@
                 </div>
                 <div class="edu">
                     <h4>EDUCATIONAL QUALIFICATION</h4>
+                    <h3>${inputFields["education"].value}
                     <h3 class="grey">Bachelors:${inputFields["btechper"].value}</h3>
-                    <h5 class="grey">bachelors</h5>
-                    <b>information technology</b>
-                    <h5 class="grey">bapatla enginnering college</h5>
-                    <h3 class="grey">Intermediate:${inputFields["inter"].value}</h3>
-                    <b>m.p.c</b>
+                    
+                    <h5 class="grey">${inputFields["btech"].value}</h5>
+                    <h3 class="grey">Intermediate:${inputFields["inter"].value}-${inputFields["interper"].value}</h3>
+                    <h3 class="grey">school:${inputFields["sch"].value}-${inputFields["schper"].value}
                     
 
                 </div>
@@ -221,6 +240,9 @@
         </div>
         
      `;
+     reader.onloadend = ()=>{
+         document.getElementById("pic").src = reader.result
+     }
         } else {
           isinputshown = true;
           inputFields.style.display = "block";
