@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>resume</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h2 class="title">Resume Generator</h2>
+    <div class="resume"></div>
+    <form action="" class="input-fields">
+      <div class="pers">
+        <h2>Personal Info:</h2>
+        First Name
+        <input type="text" name="fname" required />
+        Last name
+        <input type="text" name="lname" required />
+        Address
+        <input type="text" name="add" required />
+        Email address
+        <input type="email" name="email" required />
+        Phone Number
+        <input type="number" name="pno" required />
+        Please select your photo
+        <input type="file" name="pic" accept=".jpeg,.jpg,.svg,.webp" />
+      </div>
+      <div class="skills">
+        <h2>Skill and Summary</h2>
+        skill-1
+        <input type="text" name="skill1" />
+        <select name="skill-level1" id="">
+          <option value="basic">basic</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="expert">Expert</option></select
+        ><br />
+        skill-2
+        <input type="text" name="skill2" />
+        <select name="skill-level2" id="">
+          <option value="basic">basic</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+        <h4>Summary</h4>
+        <textarea
+          name="summary"
+          cols="40"
+          rows="6"
+          placeholder="write exp summary"
+        ></textarea>
+      </div>
+      <div class="edu">
+        <h2>Education:</h2>
+        <select name="education" id="">
+          <option value="">Select</option>
+          <option value="">Bachelor of Education</option>
+          <option value="">Bachelor of Technology</option>
+          <option value="">Bachelor of Engineering</option>
+          <option value="">Bachelor of Science</option></select
+        ><br />
+        BACHELORS COLLEGE NAME:
+        <input type="text" name="btech">
+        CGPA Obtained
+        <input type="number" name="btechper" />
+        Intermediate college Name
+        <input type="text" name="inter" />
+        CGPA Obtained
+        <input type="number" name="interper" />
+        School name
+        <input type="text" name="sch" />
+        CGPA Obtained
+        <input type="number" name="schper" />
+      </div>
+      <div class="exp">
+        <h2>Work Experience:</h2>
+        name of company
+        <input type="text" name="cname"/>
+        How Many years Worked
+        <input type="number" name="expyear" />
+        Worked As
+        <input type="text" name="position">
+        Description
+        <input type="text" name="desc">
+      </div>
+    </form>
+    <button onclick="toggle()" class="prev"><i> preview or edit </i></button>
+   <script src="script.js"></script>
+  </body>
+</html>
