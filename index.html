@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <h2 class="title">Resume Generator</h2>
+    <h2 class="title"> Wandel's Resume Generator</h2>
     <div class="resume"></div>
     <form action="" class="input-fields">
       <div class="pers">
@@ -25,7 +25,7 @@
         Phone Number
         <input type="number" name="pno" required />
         Please select your photo
-        <input type="file" name="pic" accept=".jpeg,.jpg,.svg,.webp" />
+        <input type="file" name="pic" mandatory accept=".jpeg,.jpg,.svg,.webp" />
       </div>
       <div class="skills">
         <h2>Skill and Summary</h2>
@@ -86,6 +86,7 @@
       </div>
     </form>
     <button onclick="toggle()" class="prev"><i> preview or edit </i></button>
+    <h2 class="note">Note: profile pic is mandatory</h2>
    <script src="script.js"></script>
   </body>
 </html>

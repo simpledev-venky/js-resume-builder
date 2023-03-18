@@ -3,10 +3,15 @@ img {
   border-radius: 4rem;
   border: 2px solid rgb(47, 0, 255);
 }
-
+body{
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+letter-spacing:1px;
+}
 .res {
   padding: 1rem;
-  border: 0.2rem dotted lightblue;
+  border: 0.2rem solid lightblue;
+  background-color:gray;
+  color: wheat;;
 }
 
 .header {
@@ -16,7 +21,7 @@ img {
 }
 
 .header > h1 {
-  background-image: linear-gradient(to right, green, pink);
+  background-color: indigo;
   padding: 2rem;
   color: white;
   border-radius: 1rem 4rem;
@@ -82,4 +87,15 @@ input {
   margin: 12px 40%;
   font-size: large;
   font-weight: bold;
+  cursor: pointer;
+}
+.down-btn{
+color: #cd7e32;
+font-style: italic;
+font-size: 1.4rem;
+border-radius: 1rem;
+}
+.note{
+  text-align: center;
+  color: crimson;
 }

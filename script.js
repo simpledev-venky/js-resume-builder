@@ -17,7 +17,7 @@ function toggle() {
     resume.innerHTML = `
        <div class="res">
         <div class="header">
-            <img src="" id="pic" width="200" height="230" />
+            <img src="" id="pic" width="200" height="200" style="border-radius:100px" />
             <h1>${inputFields["fname"].value} ${inputFields["lname"].value}</h1>
         </div>
         <div class="grid">
@@ -61,7 +61,8 @@ function toggle() {
 
                 </div>
             </div>
-            <button onclick = "print()"><i>Download</i></button>
+            <button onclick = "print()" class="down-btn"
+            ><i>Download</i></button>
         </div>
         </div>
         
